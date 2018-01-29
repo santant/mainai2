@@ -4,7 +4,6 @@
       <router-link to="/" slot="left">
         <mt-button icon="back">返回</mt-button>
       </router-link>
-      <mt-button icon="more" slot="right"></mt-button>
     </mt-header>
     <div class="swipe_xy">
       <mt-swipe :auto="4000">
