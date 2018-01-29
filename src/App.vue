@@ -3,7 +3,6 @@
       <router-view style=" transition: all 0.4s ease;"></router-view>
     </transition>
 </template>
-
 <script>
 import rem from '../static/js/rem.js'
 
