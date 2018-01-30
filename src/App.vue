@@ -35,6 +35,7 @@ export default {
 <style lang="less">
 // @import '../../../static/foot/iconfont.css'
 // @import '../../../static/config/const.less';
+@import './assets/less/style';
 //公共的
 body,html{
     width: 100%;
