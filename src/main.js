@@ -5,6 +5,7 @@ import router from './router'
 import MintUI from 'mint-ui'
 import 'mint-ui/lib/style.css'
 
+// 引入ajax注入原型
 Vue.config.productionTip = false
 
 Vue.use(MintUI)

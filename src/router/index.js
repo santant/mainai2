@@ -5,7 +5,10 @@ import VueRouter from 'vue-router'
 // 首页
 import Home from '@/components/home/home'
 import goodsInfo from '@/components/goods/goodsInfo.vue'
-
+// 用户
+import User from '@/components/user/user'
+// 注册
+import SignIn from '@/components/user/signIn.vue'
 
 Vue.use(VueRouter)
 
@@ -15,12 +18,32 @@ let router = new VueRouter({
     // 首页
     path: '/',
     name: 'Home',
-    component: Home
-  },{
+    component: Home,
+    meta: {
+      title: '主页'
+    }
+  }, {
     path: '/goods/goodsInfo',
     name: 'goodsInfo',
-    component: goodsInfo
-  },{
+    component: goodsInfo,
+    meta: {
+      title: '商品详情'
+    }
+  }, {
+    path: '/goods/user',
+    name: 'User',
+    component: User,
+    meta: {
+      title: '用户中心'
+    }
+  }, {
+    path: '/goods/signin',
+    name: 'signin',
+    component: SignIn,
+    meta: {
+      title: '登录注册'
+    }
+  }, {
     path: '*',
     // 可以直接到404自己定义的组件
     // component: noFound
@@ -31,3 +54,8 @@ let router = new VueRouter({
 
 export default router
 
+router.afterEach((to, from, next) => {
+  if (to.meta.title) {
+    window.document.title = to.meta.title
+  }
+})

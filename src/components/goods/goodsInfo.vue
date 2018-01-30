@@ -323,6 +323,16 @@
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="less">
   #goods {
+    .swipe_xy {
+      height: 16rem;
+      box-shadow: 1px 10px 20px #ccc;
+      /*overflow: hidden;*/
+      img {
+        width: 100%;
+        height: 16.0625rem;
+      }
+    }
+    font-family: Arial;
     .payOrder {
       width: 100%;
       height: 2.90625rem;
@@ -338,6 +348,7 @@
         font-size: 0.78125rem;
         letter-spacing: 2px;
         .price {
+          font-family: Arial;
           color: #d33c3c;
         }
         &:nth-child(1) {
@@ -345,10 +356,12 @@
           font-weight: 400;
           color: #333;
           > i {
+
             color: #d33c3c;
             font-weight: 600;
           }
           > b:nth-child(1) {
+
             padding-left: 1.34375rem;
           }
 
@@ -515,6 +528,7 @@
       > p {
         font-size: 0.84375rem;
         color: #da2b2b;
+        font-family: Arial;
       }
       > span, p {
         line-height: 1.5625rem;
@@ -547,6 +561,7 @@
           .today {
             position: absolute;
             left: 5.5rem;
+            font-family: Arial;
           }
         }
         dt {
@@ -661,13 +676,5 @@
     }
   }
 
-  .swipe_xy {
-    height: 16rem;
-    box-shadow: 1px 10px 20px #ccc;
-    /*overflow: hidden;*/
-    img {
-      width: 100%;
-      height: 16.0625rem;
-    }
-  }
+
 </style>

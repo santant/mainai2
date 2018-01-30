@@ -40,7 +40,11 @@ body,html{
     width: 100%;
     height: 100%;
   .mint-header{
-    background: #333;
+    background: #910a0a;
+    border: none;
+    .mint-header-title{
+      font-size: 0.9375rem;
+    }
   }
 }
 h1, h2 {

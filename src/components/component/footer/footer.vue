@@ -3,23 +3,21 @@
     <i style="height: 2.625rem;display: block;width: 100%;"></i>
     <div class="footer_xy">
       <ul>
-        <li>
-          <a href="/" class="active_li">
+        <li :class="{'active_li':select==0}">
+          <router-link to="/">
             <i class="iconfont">&#xe62e;</i>
             <p>首页</p>
-          </a>
+          </router-link>
         </li>
         <!--<li>-->
-          <!--<router-link to="/goods/release">-->
-            <!--<i class="iconfont">&#xe620;</i>-->
-            <!--<p>发帖</p>-->
-          <!--</router-link>-->
+        <!--<router-link to="/goods/release">-->
+        <!--<i class="iconfont">&#xe620;</i>-->
+        <!--<p>发帖</p>-->
+        <!--</router-link>-->
         <!--</li>-->
-        <li @click="goUser">
-          <!--<a href="">-->
+        <li   :class="{'active_li':select==1}" @click="goUser('2')">
           <i class="iconfont">&#xe657;</i>
           <p>我的</p>
-          <!--</a>-->
         </li>
       </ul>
     </div>
@@ -29,19 +27,23 @@
 <script>
   export default {
     data() {
-      return {}
+      return {
+        select: 0
+      }
     },
     methods: {
       goUser() {
         if (localStorage['userDbId'] && localStorage['id']) {
-          this.$router.push({path: "/user/userinfo", query: {"": ''}})
+          this.$router.push({path: "/goods/userinfo", query: {"select": 1}})
         } else {
-          this.$router.push({path: "/user/login", query: {"": ''}})
+          this.$router.push({path: "/goods/signin", query: {"select": 1}})
         }
       }
     },
     mounted() {
-
+      if (this.$route.query.select === 1) {
+        this.select = 1
+      }
     },
     watch: {}
   }
@@ -60,20 +62,28 @@
       ul {
         display: flex;
         background: #f3f3f3;
+        .active_li {
+          a {
+            color: #941111;
+          }
+          i {
+            color: #941111;
+          }
+          p{
+            color: #941111;
+          }
+        }
         li {
           flex: 1;
           text-align: center;
           color: #a7a7a7;
-          .active_li {
-            color: #941111;
-          }
           a {
             color: #5d6164;
           }
           i {
             font-size: 1.53125rem;
-            line-height:1.53125rem;
-            height:1.53125rem;
+            line-height: 1.53125rem;
+            height: 1.53125rem;
             margin-top: 0.15rem;
             display: block;
           }
