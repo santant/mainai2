@@ -10,8 +10,12 @@ import User from '@/components/user/user'
 // 注册
 import SignIn from '@/components/user/signIn.vue'
 
-Vue.use(VueRouter)
+//地址列表
+import AddressList from '@/components/Addaddress/addresslist.vue'
+// 订单List
+import OrderList from '@/components/order/orderList.vue'
 
+Vue.use(VueRouter)
 let router = new VueRouter({
   // mode: 'history',
   routes: [{
@@ -42,6 +46,20 @@ let router = new VueRouter({
     component: SignIn,
     meta: {
       title: '登录注册'
+    }
+  }, {
+    path: '/goods/addresslist',
+    name: 'addresslist',
+    component: AddressList,
+    meta: {
+      title: '我的收货地址'
+    }
+  }, {
+    path: '/goods/orderList',
+    name: 'orderList',
+    component: OrderList,
+    meta: {
+      title: '我的订单'
     }
   }, {
     path: '*',
