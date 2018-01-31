@@ -1,7 +1,7 @@
 <template>
 	<div id="address">
 		<div class="myinfo">
-			<mt-field label="收货人" placeholder="收货人" v-model="username"></mt-field>
+			<mt-field ref="username" state="success" label="" placeholder="收货人" v-model="username"></mt-field>
 			<mt-field label="联系方式" placeholder="联系方式" type="tel" v-model="phone"></mt-field>
 			<mt-field class="bor-b" label="收货地址" type="text" readonly="readonly" v-model="city">
 				<i class="iconfont" @click="getAreaList">&#xe63f;</i>
