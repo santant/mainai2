@@ -20,11 +20,13 @@
           </div>
         </li>
       </ol>
+      <!--<img width="50%" src="../../assets/image/loading.gif" alt="">-->
     </div>
   </div>
 </template>
 <script>
-  import {Swipe, SwipeItem} from 'mint-ui';
+  import {Indicator} from 'mint-ui';
+
   export default {
     data() {
       return {}
@@ -38,33 +40,36 @@
 
     },
     mounted() { //全部渲染完毕
-
+//      Indicator.open({
+//        text: '加载中...',
+//        spinnerType: 'triple-bounce'
+//      })
     }
   }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="less">
-  #coupon{
+  #coupon {
     font-family: Arial;
     background: #f3f3f3;
     width: 100%;
     min-height: 100%;
-    .couponList{
-      padding:  0 0.78125rem;
-      ol{
-        li{
+    .couponList {
+      padding: 0 0.78125rem;
+      ol {
+        li {
           height: 6.9375rem;
           background: url("../../assets/image/coupon_bg.png") no-repeat;
           background-size: 100%;
           margin: 0.5625rem 0;
           overflow: hidden;
-          .div_left{
+          .div_left {
             width: 11.9375rem;
             height: 100%;
             float: left;
             position: relative;
-            span{
+            span {
               height: 1.3125rem;
               line-height: 1.3125rem;
               display: block;
@@ -73,13 +78,13 @@
               color: #910a0a;
               margin-top: 1.25rem;
             }
-            i{
+            i {
               display: block;
               text-align: center;
               font-size: 1.59375rem;
               color: #910a0a;
             }
-            p{
+            p {
               text-align: center;
               font-size: 0.625rem;
               height: 1.3125rem;
@@ -89,11 +94,11 @@
               margin-top: 0.8rem;
             }
           }
-          .div_right{
+          .div_right {
             width: 6.46875rem;
             height: 100%;
             float: right;
-            span{
+            span {
               line-height: 2.53125rem;
               height: 2.53125rem;
               display: block;
@@ -102,7 +107,7 @@
               color: #333;
               padding-top: 2.1875rem;
             }
-            p{
+            p {
               line-height: 1.125rem;
               height: 1.125rem;
               text-align: center;

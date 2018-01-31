@@ -19,6 +19,9 @@ import Address from '@/components/Addaddress/address.vue'
 // 订单List
 import OrderList from '@/components/order/orderList.vue'
 
+//确认订单
+import ConfirmOrder from '@/components/order/confirmOrder.vue'
+
 // 我的优惠劵
 import Coupon from '@/components/coupon/coupon.vue'
 
@@ -91,6 +94,13 @@ let router = new VueRouter({
     component: obtainCoupon,
     meta: {
       title: '领劵中心'
+    }
+  }, {
+    path: '/goods/confirmOrder',
+    name: 'confirmOrder',
+    component: ConfirmOrder,
+    meta: {
+      title: '确认订单'
     }
   }, {
     path: '*',

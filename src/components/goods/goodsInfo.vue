@@ -95,7 +95,7 @@
     <!--结算-->
     <div class="payOrder">
       <span><b>合计：</b><i class="iconfont">&#xe652;</i><b class="price">66.00</b></span>
-      <span>结算</span>
+      <span @click="goOrder">结算</span>
     </div>
   </div>
 </template>
@@ -149,6 +149,9 @@
       navFooter
     },
     methods: { //执行的方法函数
+      goOrder(){ //结算
+        this.$router.push({path: "/goods/confirmOrder"})
+      },
       prevMouth() {
         this.putYm(--this.dataJson.mouth)
       },
