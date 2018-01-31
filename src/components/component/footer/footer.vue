@@ -33,15 +33,16 @@
     },
     methods: {
       goUser() {
-        if (localStorage['userDbId'] && localStorage['id']) {
-          this.$router.push({path: "/goods/userinfo", query: {"select": 1}})
-        } else {
-          this.$router.push({path: "/goods/signin", query: {"select": 1}})
-        }
+//        if (localStorage['userDbId'] && localStorage['id']) {
+//          this.$router.push({path: "/goods/userinfo", query: {"select": 1}})
+//        } else {
+//          this.$router.push({path: "/goods/signin", query: {"select": 1}})
+//        }
+        this.$router.push({path: "/goods/user", query: {"select": 1}})
       }
     },
     mounted() {
-      if (this.$route.query.select === 1) {
+      if (this.$route.query.select == 1) {
         this.select = 1
       }
     },

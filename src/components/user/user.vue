@@ -27,36 +27,37 @@
     <!--菜单功能-->
     <div class="userMenu">
       <ol>
-        <li>
+        <router-link tag="li" :to="{path:'/goods/orderList'}">
           <div>
             <i class="iconfont">&#xe653;</i>
           </div>
           <span>我的订单</span>
-        </li>
-        <li>
+        </router-link>
+        <router-link tag="li" :to="{path:'/goods/coupon'}">
           <div>
             <i class="iconfont">&#xe610;</i>
           </div>
-          <span>我的卷码</span>
-        </li>
-        <li>
+          <span>我的优惠劵</span>
+        </router-link>
+
+        <router-link tag="li" :to="{path:'/goods/obtaincoupon'}">
           <div>
             <i class="iconfont">&#xe68b;</i>
           </div>
           <span>领券中心</span>
-        </li>
+        </router-link>
         <li>
           <div>
             <i class="iconfont">&#xe61f;</i>
           </div>
           <span>我的兑换卷</span>
         </li>
-        <li>
+        <router-link tag="li" :to="{path:'/goods/addresslist'}">
           <div>
             <i class="iconfont">&#xe60d;</i>
           </div>
           <span>我的地址</span>
-        </li>
+        </router-link>
         <li>
           <div>
             <i class="iconfont">&#xe607;</i>
@@ -136,12 +137,24 @@
       ol {
         overflow: hidden;
         li {
-          &:nth-child(1) > div{background: #89bef9}
-          &:nth-child(2) > div{background: #9cf2d9}
-          &:nth-child(3) > div{background: #d2b4ed}
-          &:nth-child(4) > div{background: #f98999}
-          &:nth-child(5) > div{background: #9ca0f2}
-          &:nth-child(6) > div{background: #d4edb4}
+          &:nth-child(1) > div {
+            background: #89bef9
+          }
+          &:nth-child(2) > div {
+            background: #9cf2d9
+          }
+          &:nth-child(3) > div {
+            background: #d2b4ed
+          }
+          &:nth-child(4) > div {
+            background: #f98999
+          }
+          &:nth-child(5) > div {
+            background: #9ca0f2
+          }
+          &:nth-child(6) > div {
+            background: #d4edb4
+          }
           float: left;
           width: 33.33%;
           margin-top: 1rem;
@@ -150,7 +163,7 @@
             height: 3.21875rem;
             border-radius: 50%;
             margin: 0 auto;
-            >i{
+            > i {
               line-height: 3.21875rem;
               text-align: center;
               display: block;

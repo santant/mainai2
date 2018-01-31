@@ -18,7 +18,12 @@ export default {
 
     },
     watch: {
-      '$route'(to, from) {
+      '$route'(to, from,next) {
+//        console.log(from.name)
+//        console.log(to.name)
+//        if(from.name=='goodsInfo' && to.name=='Home'){
+//            return false
+//        }
         if (to.path == '/') {
           this.transitionName = 'slide-right';
         } else {

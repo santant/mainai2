@@ -7,9 +7,9 @@
     </mt-header>
     <div class="orderStatus">
       <ol>
-        <li>全部</li>
-        <li>待支付</li>
-        <li>待付款</li>
+        <li class="li_active">全部  <i></i></li>
+        <li>待支付 <i></i></li>
+        <li>待付款 <i></i></li>
       </ol>
       <div class="orderlist">
         <div class="order_number order_line">
@@ -19,7 +19,59 @@
         </div>
         <div class="order_info">
           <div class="good_img">
-            <!--<img src="../home/image/banner01.jpg" alt="">-->
+            <img src="../home/image/mainlist01.png" alt="">
+          </div>
+          <div class="order_main">
+            <span class="order_titme">冰岛式酸奶巴氏杀冰岛式酸奶巴氏杀菌热处理风味酸奶菌热处理风味酸奶</span>
+            <p class="order_pay"><i class="iconfont">&#xe652;</i>88.00</p>
+            <span class="order_number_info">容量：200g*12盒/箱   <b>x1</b></span>
+          </div>
+        </div>
+        <div class="order_time order_line">
+          <span>2017-06-09  13:32</span>
+          <span class="pay_mun">共1件商品  合计：<i class="iconfont">&#xe652;88.00</i></span>
+        </div>
+        <div class="order_pay order_line">
+          <span class="pay_status">待付款</span>
+          <span class="pay_cancel">取消订单</span>
+          <span class="pay_pay">立即支付</span>
+        </div>
+      </div>
+      <div class="orderlist">
+        <div class="order_number order_line">
+          <span>订单号</span>
+          <span>212322212</span>
+          <i class="iconfont">&#xe61c;</i>
+        </div>
+        <div class="order_info">
+          <div class="good_img">
+            <img src="../home/image/mainlist01.png" alt="">
+          </div>
+          <div class="order_main">
+            <span class="order_titme">冰岛式酸奶巴氏杀热处理风味酸奶</span>
+            <p class="order_pay"><i class="iconfont">&#xe652;</i>88.00</p>
+            <span class="order_number_info">容量：200g*12盒/箱   <b>x1</b></span>
+          </div>
+        </div>
+        <div class="order_time order_line">
+          <span>2017-06-09  13:32</span>
+          <span class="pay_mun">共1件商品  合计：<i class="iconfont">&#xe652;88.00</i></span>
+        </div>
+        <div class="order_pay order_line">
+          <span class="pay_status">待付款</span>
+          <span class="pay_cancel">取消订单</span>
+          <span class="pay_pay">立即支付</span>
+        </div>
+      </div>
+      <div class="orderlist">
+        <div class="order_number order_line">
+          <span>订单号</span>
+          <span>212322212</span>
+          <i class="iconfont">&#xe61c;</i>
+        </div>
+        <div class="order_info">
+          <div class="good_img">
+            <img src="../home/image/mainlist01.png" alt="">
           </div>
           <div class="order_main">
             <span class="order_titme">冰岛式酸奶巴氏杀冰岛式酸奶巴氏杀菌热处理风味酸奶菌热处理风味酸奶</span>
@@ -66,6 +118,7 @@
     .orderlist{
       padding:  0 0.8125rem;
       background: #fff;
+      margin-bottom: 0.3125rem;
       .order_line{
         line-height: 2.4375;
         height: 2.4375rem;
@@ -74,8 +127,22 @@
       .order_info{
         overflow: hidden;
         border-bottom: 1px solid #f5f5f5;
-        .good_img{
 
+        .good_img{
+          width: 4.875rem;
+          min-height: 4.875rem;
+          float: left;
+          position: relative;
+          >img{
+            margin: auto auto;
+            position: absolute;
+            top:0;
+            right: 0;
+            bottom: 0;
+            right: 0;
+            max-width: 100%;
+            max-height: 100%;
+          }
         }
         .order_main{
           width:12.875rem;
@@ -87,6 +154,7 @@
             line-height: 1rem;
             padding: 0.5rem 0;
             display: block;
+            color: #333;
           }
         }
         .order_pay{
@@ -191,13 +259,28 @@
       ol{
         display: flex;
         border-bottom: 1px solid #e5e5e5;
+        .li_active{
+          >i{
+            display: block;
+          }
+        }
         li{
+          position: relative;
           flex: 1;
           text-align: center;
           font-size: 0.9375rem;
           height: 2.9375rem;
           line-height: 2.9375rem;
           color: #999;
+          >i{
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            background: #910a0a;
+            left: 0;
+            bottom: 0;
+            display: none;
+          }
         }
       }
     }
