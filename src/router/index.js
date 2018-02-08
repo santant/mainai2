@@ -112,7 +112,6 @@ let router = new VueRouter({
 })
 
 export default router
-
 router.afterEach((to, from, next) => {
   if (to.meta.title) {
     window.document.title = to.meta.title

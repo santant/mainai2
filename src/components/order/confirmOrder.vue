@@ -65,7 +65,7 @@
         this.$router.push({path: "/goods/coupon"})
       },
       editaddress(){ //编辑地址
-        alert('1')
+        this.$router.push({path: "/goods/address"})
       }
     },
     created() { //只执行一次

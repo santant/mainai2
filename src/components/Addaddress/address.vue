@@ -1,5 +1,10 @@
 <template>
   <div id="address">
+    <mt-header title="我的地址">
+      <router-link to="/" slot="left">
+        <mt-button icon="back">返回</mt-button>
+      </router-link>
+    </mt-header>
     <div class="myinfo">
       <div class="add_form">
         <div><label>姓名</label>
@@ -217,9 +222,9 @@
 <style type="text/css" lang="less" scoped>
   #address {
     width: 100%;
-    padding: 0.8125rem 0;
     box-sizing: border-box;
     font-size: 0.625rem;
+    min-height: 100%;
     .myinfo {
       margin-bottom: 50px;
     }
