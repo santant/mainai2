@@ -10,7 +10,24 @@ module.exports = {
     // Paths
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
-    proxyTable: {},
+    proxyTable: {
+      '/oauth':{
+        target: "http://www.wincloudsoft.com",
+        changeOrigin: true
+      },
+      '/auth': {
+        target: "http://www.wincloudsoft.com",
+        changeOrigin: true
+      },
+      '/base': {
+        target: "http://www.wincloudsoft.com",
+        changeOrigin: true,
+        pathRewrite: {
+          '^/base': ''
+        },
+        logLevel: 'error'
+      }
+    },
 
     // Various Dev Server settings
     host: '0.0.0.0', // can be overwritten by process.env.HOST

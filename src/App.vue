@@ -1,7 +1,7 @@
 <template>
-   <transition :name="transitionName">
-      <router-view style=" transition: all 0.4s ease;"></router-view>
-    </transition>
+  <transition :name="transitionName">
+    <router-view class="child-view"></router-view>
+  </transition>
 </template>
 <script>
 import rem from '../static/js/rem.js'
@@ -86,17 +86,23 @@ a {text-decoration: none;}
 .positionBs{
     position: absolute;left: 0;right: 0;bottom: 0;top: 0;margin: auto auto;
 }
+.child-view {
+  position: absolute;
+  width: 100%;
+  transition: all .3s cubic-bezier(0.42,0,1,1);
+}
+
 .slide-left-enter, .slide-right-leave-active {
-    opacity: 0;
-    left:0;
-    /*-webkit-transform: translate(50px, 0);*/
-    /*transform: translate(50px, 0);*/
-    transform: translateX(-30%);
-  }
-  .slide-left-leave-active, .slide-right-enter {
-    opacity: 0;
-    -webkit-transform: translate(50px, 0);
-    transform: translate(50px, 0);
-  }
+  opacity: 0;
+  -webkit-transform: translate(50px, 0);
+  transform: translate(50px, 0);
+  transition-delay: 0.3s;
+}
+.slide-left-leave-active, .slide-right-enter {
+  opacity: 0;
+  -webkit-transform: translate(-50px, 0);
+  transform: translate(-50px, 0);
+  transition-delay: 0.3s;
+}
 
 </style>

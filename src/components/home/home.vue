@@ -100,31 +100,45 @@
   import api from '@/api'
   import navFooter from '@/components/component/footer/footer.vue'
   import {DomHeight} from '@/directive.js'
-  import {Swipe, SwipeItem} from 'mint-ui';
+  import {Swipe, SwipeItem} from 'mint-ui'
+  import axios from 'axios'
+
   export default {
     data() {
       return {
-        goods: {
-          page: 1  //开始默认开始的页数
-        },
-        goddsList: [] // 商品列表
+        token: {
+          expiresIn: "" //token过期时间
+        }
       }
     },
     components: { //引入组件
       navFooter
     },
     methods: { //执行的方法函数
-      goInfo(){ // 去详情页
+      goInfo() { // 去详情页
         this.$router.push({path: "/goods/goodsInfo", query: {"select": 1}})
+      },
+      getToken() {
+        api.Token.getToken().then(res => {
+          this.token.expiresIn = res.data.expiresIn
+          //负值session
+          sessionStorage.setItem('token', res.data.value)
+        })
       }
     },
     created() { //只执行一次
 
     },
     mounted() { //全部渲染完毕
-      api.userList.test().then(res=>{
+      var vm = this
+      vm.getToken()
+
+      api.userList.test({'a':'1'}).then(res => {
        console.log(res)
       })
+      // setInterval(function () {
+      //   vm.getToken()
+      // }, vm.token.expiresIn)
     }
   }
 </script>
@@ -148,8 +162,15 @@
             height: 5.9375rem;
             float: left;
             position: relative;
-            >img{
-              position: absolute;left: 0;right: 0;bottom: 0;top: 0;margin: auto auto; max-width: 100%;max-height: 100%;
+            > img {
+              position: absolute;
+              left: 0;
+              right: 0;
+              bottom: 0;
+              top: 0;
+              margin: auto auto;
+              max-width: 100%;
+              max-height: 100%;
             }
           }
           .box_r {
@@ -157,7 +178,7 @@
             height: 5.9375rem;
             border-bottom: 1px solid #efefef;
             float: right;
-            span{
+            span {
               line-height: 1.1875rem;
               height: 2.375rem;
               font-size: 0.78125rem;
@@ -165,14 +186,14 @@
               overflow: hidden;
               margin-top: 0.59375rem;
             }
-            b{
+            b {
               line-height: 1.28125rem;
               height: 1.28125rem;
               font-size: 0.84375rem;
               color: #da2b2b;
               font-family: Arial;
             }
-            p{
+            p {
               font-size: 0.625rem;
               color: #999;
               line-height: 1.0625rem;
@@ -266,6 +287,7 @@
       }
     }
   }
+
   .swipe_xy {
     height: 9.9rem;
 
