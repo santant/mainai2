@@ -120,6 +120,7 @@
       },
       getToken() {
         api.Token.getToken().then(res => {
+          console.log(res)
           this.token.expiresIn = res.data.expiresIn
           //负值session
           sessionStorage.setItem('token', res.data.value)

@@ -72,7 +72,7 @@ const api = {
   userList: {
     test: (jsons) => {
       console.log("1");
-      return axios.post('http://www.wincloudsoft.com/base/getMenuList', {params: jsons})
+      return axios.post('oudsoft.com/base/getMenuList', {params: jsons})
     },
     test2: (jsons) => {
       // return axios.post(TEST2, {params: jsons})

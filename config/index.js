@@ -11,22 +11,22 @@ module.exports = {
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
     proxyTable: {
-      '/oauth':{
-        target: "http://www.wincloudsoft.com",
-        changeOrigin: true
-      },
-      '/auth': {
-        target: "http://www.wincloudsoft.com",
-        changeOrigin: true
-      },
-      '/base': {
-        target: "http://www.wincloudsoft.com",
-        changeOrigin: true,
-        pathRewrite: {
-          '^/base': ''
-        },
-        logLevel: 'error'
-      }
+      // '/oauth':{
+      //   target: "http://www.wincloudsoft.com",
+      //   changeOrigin: true
+      // },
+      // '/auth': {
+      //   target: "http://www.wincloudsoft.com",
+      //   changeOrigin: true
+      // },
+      // '/base': {
+      //   target: "http://www.wincloudsoft.com",
+      //   changeOrigin: true,
+      //   pathRewrite: {
+      //     '^/base': ''
+      //   },
+      //   logLevel: 'error'
+      // }
     },
 
     // Various Dev Server settings
